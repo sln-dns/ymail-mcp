@@ -1,0 +1,19 @@
+[project]
+name = "ymail-mcp"
+version = "0.1.0"
+description = "Рабочая почта Яндекса в Claude Code: чтение и черновики (IMAP)"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.2",
+]
+
+[project.scripts]
+ymail = "ymail_mcp.cli:main"
+ymail-mcp = "ymail_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ymail_mcp"]
